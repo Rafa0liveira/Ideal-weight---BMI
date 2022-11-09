@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Prj_pesoideal
 {
@@ -40,9 +41,9 @@ namespace Prj_pesoideal
         {
             try
             {
-                Double h = 0, ideal_weight = 0;
+                Double h = 0.0, ideal_weight = 0.0;
 
-                h = double.Parse(txtheight.Text);
+                h = double.Parse(txtheight.Text, CultureInfo.InvariantCulture);
                 if (cmbgender.Text == "Female")
                 {
                     ideal_weight = (62.7 * h) - 44.7;
@@ -74,12 +75,12 @@ namespace Prj_pesoideal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double h = 0, w = 0, bmi = 0;
-            h = double.Parse(txtheight.Text);
-            w = double.Parse(txtweight.Text);
+            double h = 0.0, w = 0.0, bmi = 0.0;
+            h = double.Parse(txtheight.Text, CultureInfo.InvariantCulture);
+            w = double.Parse(txtweight.Text, CultureInfo.InvariantCulture);
             bmi = w / (h * h);
             MessageBox.Show(txtname.Text + " Your BMI is: " +
-                bmi.ToString(), "Ideal Weight", MessageBoxButtons.OK,
+                bmi.ToString("F2", CultureInfo.InvariantCulture), "Ideal Weight", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
         }
