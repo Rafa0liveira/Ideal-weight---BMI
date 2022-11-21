@@ -60,7 +60,7 @@ namespace Prj_pesoideal
                 }
                 else
                 {
-                    MessageBox.Show("Choose your gender!", "Ideal Weight",
+                    MessageBox.Show("Choose your sex!", "Ideal Weight",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
@@ -82,6 +82,10 @@ namespace Prj_pesoideal
             MessageBox.Show(txtname.Text + " Your BMI is: " +
                 bmi.ToString("F2", CultureInfo.InvariantCulture), "Ideal Weight", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+
+        }
+
+        private void label3_Click(object sender, EventArgs e) {
 
         }
     }
